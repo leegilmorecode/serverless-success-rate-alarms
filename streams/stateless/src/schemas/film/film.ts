@@ -1,0 +1,87 @@
+export const schema = {
+  $schema: 'http://json-schema.org/draft-07/schema#',
+  type: 'object',
+  properties: {
+    film: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        created: { type: 'string' },
+        title: { type: 'string' },
+        description: { type: 'string' },
+        genre: { type: 'array', items: { type: 'string' } },
+        release_date: { type: 'string', format: 'date' },
+        duration: { type: 'string' },
+        rating: {
+          type: 'object',
+          properties: {
+            average: { type: 'number' },
+            count: { type: 'integer' },
+          },
+          required: ['average', 'count'],
+        },
+        cast: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              name: { type: 'string' },
+              role: { type: 'string' },
+            },
+            required: ['name', 'role'],
+          },
+        },
+        directors: { type: 'array', items: { type: 'string' } },
+        writers: { type: 'array', items: { type: 'string' } },
+        production_studio: { type: 'string' },
+        language: { type: 'string' },
+        subtitles: { type: 'array', items: { type: 'string' } },
+        poster_url: { type: 'string', format: 'uri' },
+        trailer_url: { type: 'string', format: 'uri' },
+        video_quality: { type: 'array', items: { type: 'string' } },
+        audio_languages: { type: 'array', items: { type: 'string' } },
+        availability: {
+          type: 'object',
+          properties: {
+            start_date: { type: 'string', format: 'date' },
+            end_date: { type: 'string', format: 'date' },
+          },
+          required: ['start_date', 'end_date'],
+        },
+        streaming_info: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              provider: { type: 'string' },
+              url: { type: 'string', format: 'uri' },
+              expires_at: { type: 'string' },
+            },
+            required: ['provider', 'url', 'expires_at'],
+          },
+        },
+      },
+      required: [
+        'title',
+        'description',
+        'genre',
+        'release_date',
+        'duration',
+        'rating',
+        'cast',
+        'directors',
+        'writers',
+        'production_studio',
+        'language',
+        'subtitles',
+        'poster_url',
+        'trailer_url',
+        'video_quality',
+        'audio_languages',
+        'availability',
+        'streaming_info',
+      ],
+    },
+  },
+  required: ['film'],
+};

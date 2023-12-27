@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "3b6426f2-afaf-4e85-98b2-a2fc7f7d5a62",
+		"name": "Serverless Film Streams",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "752706"
+	},
+	"item": [
+		{
+			"name": "Create Film",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"film\": {\n    \"title\": \"Inception\",\n    \"description\": \"A mind-bending thriller about dreams within dreams.\",\n    \"genre\": [\"Action\", \"Adventure\", \"Sci-Fi\"],\n    \"release_date\": \"2010-07-16\",\n    \"duration\": \"2:28:00\",\n    \"rating\": {\n      \"average\": 4.8,\n      \"count\": 1500\n    },\n    \"cast\": [\n      {\"name\": \"Leonardo DiCaprio\", \"role\": \"Cobb\"},\n      {\"name\": \"Joseph Gordon-Levitt\", \"role\": \"Arthur\"}\n    ],\n    \"directors\": [\"Christopher Nolan\"],\n    \"writers\": [\"Christopher Nolan\"],\n    \"production_studio\": \"Warner Bros.\",\n    \"language\": \"English\",\n    \"subtitles\": [\"English\", \"Spanish\", \"French\"],\n    \"poster_url\": \"https://example.com/inception_poster.jpg\",\n    \"trailer_url\": \"https://example.com/inception_trailer.mp4\",\n    \"video_quality\": [\"HD\", \"4K\"],\n    \"audio_languages\": [\"English\", \"Spanish\"],\n    \"availability\": {\n      \"start_date\": \"2023-01-01\",\n      \"end_date\": \"2023-12-31\"\n    },\n    \"streaming_info\": [\n      {\n        \"provider\": \"Netflix\",\n        \"url\": \"https://www.netflix.com/watch/inception\",\n        \"expires_at\": \"2023-12-31T23:59:59Z\"\n      },\n      {\n        \"provider\": \"Amazon Prime\",\n        \"url\": \"https://www.amazon.com/watch/inception\",\n        \"expires_at\": \"2023-12-31T23:59:59Z\"\n      }\n    ]\n  }\n}\n"
+				},
+				"url": {
+					"raw": "https://your-api.execute-api.eu-west-1.amazonaws.com/prod/films/",
+					"protocol": "https",
+					"host": [
+						"your-api",
+						"execute-api",
+						"eu-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"films",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Film by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xkwrwrr7d0.execute-api.eu-west-1.amazonaws.com/prod/films/9a29a5d1-c43b-4673-a293-0e06e832f352",
+					"protocol": "https",
+					"host": [
+						"xkwrwrr7d0",
+						"execute-api",
+						"eu-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"films",
+						"9a29a5d1-c43b-4673-a293-0e06e832f352"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
